@@ -192,3 +192,8 @@ nav.addEventListener('mouseout', function(e) {
 
 
 // ---------------------------- end DOM Traversing -------------------------------------- //
+
+
+// -------------------------- tab ---------------------------------------------------------- //
+const tabContainer = document.querySelector('.operations__tab-container');
+const tabContent = document.querySelector('.operations__content');
