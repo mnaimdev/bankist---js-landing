@@ -133,3 +133,62 @@ backToTopBtn.addEventListener('click', function(e) {
    })
 
 });
+
+
+// ----------------------------- end event -------------------------------------------- //
+
+// ------------------------------- DOM Traversing -------------------------------------- //
+const heading = document.querySelector('h1');
+// console.log(heading.parentElement);
+// console.log(heading.parentNode);
+// console.log(heading.children);
+// console.log(heading.childNodes);
+// console.log(heading.firstChild);
+// console.log(heading.lastChild);
+// console.log(heading.querySelectorAll('.highlight'));
+
+heading.firstElementChild.style.color = 'white';
+heading.lastElementChild.style.color = 'orangered';
+
+// heading.closest('.header').style.backgroundColor = 'red';
+// heading.closest('h1').style.backgroundColor = 'red';
+// heading.previousElementSibling.style.color ='blue';
+// heading.nextElementSibling.style.color ='red';
+
+[...heading.parentElement.children].forEach((el) => {
+    if (el !== heading) {
+        el.style.transform = 'scale(0.8)';
+    }
+});
+
+
+const nav = document.querySelector('.nav');
+
+const handleOpacity = (e, opacity) => {
+    if (e.target.classList.contains('nav__link')) {
+        const link = e.target;
+        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+        const logo = link.closest('.nav').querySelector('.nav__logo');
+
+        siblings.forEach((el) => {
+            if (el !== link) {
+                el.style.opacity = opacity;
+            }
+        });
+
+        logo.style.opacity = opacity;
+    }
+}
+
+
+nav.addEventListener('mouseover', function(e) {
+    handleOpacity(e, 0.5);
+});
+
+
+nav.addEventListener('mouseout', function(e) {
+    handleOpacity(e, 1);
+});
+
+
+// ---------------------------- end DOM Traversing -------------------------------------- //
