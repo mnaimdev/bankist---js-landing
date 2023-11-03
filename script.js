@@ -308,3 +308,24 @@ sliderLeftBtn.addEventListener('click', () => {
 });
 
 // ------------------------ end slider ------------------------------- //
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Load HTML & JS');
+});
+
+
+window.addEventListener('load', () => {
+    console.log('Loaded full sources');
+});
+
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+
+    e.returnValue = '';
+});
+
+
+// ---------------------- end dom ----------------------------- //
+
+
