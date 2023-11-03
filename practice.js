@@ -39,12 +39,24 @@ document.addEventListener('keydown', (e) => {
 
 // --------------------- cookie message --------------------------- //
 
+// const header = document.querySelector('.header');
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// message.innerHTML = 'We use cookie for analytics & user experience. <button class="btn btn-cookie">Got it</button>';
+// header.append(message);
+
+// document.querySelector('.btn-cookie').addEventListener('click', () => {
+//     message.remove();
+// });
+
+
 const header = document.querySelector('.header');
 const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML = 'We use cookie for analytics & user experience. <button class="btn btn-cookie">Got it</button>';
 header.append(message);
 
-document.querySelector('.btn-cookie').addEventListener('click', () => {
-    message.remove();
+
+document.querySelector('.btn-cookie').addEventListener("click", () => {
+   message.remove();
 });
