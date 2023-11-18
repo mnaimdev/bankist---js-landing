@@ -219,3 +219,16 @@ tabContainer.addEventListener('click', function(e) {
 
     document.querySelector(`.operations__content--${currentElement.dataset.tab}`).classList.add('operations__content--active');
 });
+
+// ------------------------------- sticky navigation ----------------------- //
+const targetSection = document.getElementById('section--1');
+
+window.addEventListener('scroll', function () {
+    const targetPosition = targetSection.getBoundingClientRect();
+
+    if (this.window.scrollY > targetPosition.top) {
+        nav.classList.add('sticky-nav');
+    } else {
+        nav.classList.remove('sticky-nav');
+    }
+});
