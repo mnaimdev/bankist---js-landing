@@ -196,4 +196,26 @@ nav.addEventListener('mouseout', function(e) {
 
 // -------------------------- tab ---------------------------------------------------------- //
 const tabContainer = document.querySelector('.operations__tab-container');
-const tabContent = document.querySelector('.operations__content');
+const tabContent = document.querySelectorAll('.operations__content');
+const tab = document.querySelectorAll('.operations__tab');
+
+tabContainer.addEventListener('click', function(e) {
+    let currentElement = e.target.closest('.operations__tab');
+
+    if (!currentElement) {
+        return;
+    }
+
+
+    tab.forEach((item) => {
+        item.classList.remove('operations__tab--active');
+    });
+
+    tabContent.forEach((item) => {
+        item.classList.remove('operations__content--active'); 
+    });
+
+    currentElement.classList.add('operations__tab--active');
+
+    document.querySelector(`.operations__content--${currentElement.dataset.tab}`).classList.add('operations__content--active');
+});

@@ -205,6 +205,7 @@ tabContainer.addEventListener('click', (e) => {
      tab.forEach((button) => {
         button.classList.remove('operations__tab--active');
     });
+    
     tabContent.forEach((content) => {
         content.classList.remove('operations__content--active');
     })
